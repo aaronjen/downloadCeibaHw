@@ -1,17 +1,33 @@
 {
-  "manifest_version": 2,
+    "manifest_version": 2,
 
-  "name": "Ceiba download helper",
-  "description": "download all file into zip",
-  "version": "0.0",
+    "name": "Ceiba download helper",
+    "description": "download all file into zip",
+    "version": "0.0",
 
-  "browser_action": {
-    "default_icon": "icon.png",
-    "default_title" : "DC",
-    "default_popup" : "popup.html"
-  },
-  "permissions" : [
-  ],
-  "content_scripts" : [{
-  }]
+    "browser_action": {
+        "default_icon": "icon.png",
+        "default_title": "DC",
+        "default_popup": "popup.html"
+    },
+    "permissions": [
+        "https://ceiba.ntu.edu.tw/*"
+    ],
+    "web_accessible_resources": [],
+    "content_scripts": [{
+        "matches": [
+            "https://ceiba.ntu.edu.tw/*"
+        ],
+        "css": [
+            "node_modules/bootstrap/dist/css/bootstrap.min.css"
+        ],
+        "js": [
+            "node_modules/jquery/dist/jquery.min.js",
+            "node_modules/axios/dist/axios.min.js",
+            "node_modules/jszip/dist/jszip.min.js",
+            "node_modules/file-saver/FileSaver.min.js",
+            "node_modules/bootstrap/dist/js/bootstrap.min.js",
+            "script.js"
+        ]
+    }]
 }
