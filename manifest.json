@@ -7,13 +7,19 @@
 
     "browser_action": {
         "default_icon": "icon.png",
-        "default_title": "DC",
-        "default_popup": "popup.html"
+        "default_title": "DC"
     },
     "permissions": [
-        "https://ceiba.ntu.edu.tw/*"
+        "https://ceiba.ntu.edu.tw/*",
+        "tabs"
     ],
-    "web_accessible_resources": [],
+    "background": {
+        "scripts": ["inject.js"],
+        "persistent": false
+    },
+    "web_accessible_resources": [
+        "script.js"
+    ],
     "content_scripts": [{
         "matches": [
             "https://ceiba.ntu.edu.tw/*"
@@ -26,8 +32,7 @@
             "node_modules/axios/dist/axios.min.js",
             "node_modules/jszip/dist/jszip.min.js",
             "node_modules/file-saver/FileSaver.min.js",
-            "node_modules/bootstrap/dist/js/bootstrap.min.js",
-            "script.js"
+            "node_modules/bootstrap/dist/js/bootstrap.min.js"
         ]
     }]
 }

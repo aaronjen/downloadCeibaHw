@@ -7,7 +7,8 @@ var downloading = false;
 var tds = []
 
 function getLink() {
-    console.log('getLink')
+    console.log("getLink")
+    $('body').css('background-color', 'grey')
     $('body').mouseover(function(e) {
         if (e.target.tagName === "TD") {
             tds = []
@@ -49,6 +50,7 @@ function getHw(link) {
             var header = response.headers['content-disposition'];
             var filename = header.match(/filename="(.+)"/)[1];
             zip.file("HW/" + filename, response.data);
+            console.log("getfile!")
             addNum++
         })
 }
